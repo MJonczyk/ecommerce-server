@@ -16,10 +16,15 @@ public class UserService {
 
     public List<User> getAll() { return this.userRepository.findAll(); }
 
-    public User getOne(Long id) { return this.getOne(id); }
+    public User getOne(Long id) { return this.userRepository.getOne(id); }
+
+    public User getOneByUsermame(String username) {
+        return this.userRepository.findUserByUsername(username).orElse(null);
+    }
+
 
     public User save(User newUser) {
-        if(userRepository.findUserByName(newUser.getName()).isPresent() ||
+        if(userRepository.findUserByUsername(newUser.getUsername()).isPresent() ||
                 userRepository.findUserByEmail(newUser.getEmail()).isPresent())
             return null;
         return userRepository.save(newUser);

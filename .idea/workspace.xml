@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd4d096-262f-4cdf-b249-dcd5115d845f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/assembler/UserModelAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/SecurityConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/config/WebSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/filter/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/filter/JWTAuthorizationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,10 +44,14 @@
   <component name="ProjectId" id="1bDMcZycRvHf13jTXAb1sRmMQKc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chessmanager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -59,6 +67,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce_server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerceapp.ecommerceserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerceapp.ecommerceserver.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -73,7 +101,9 @@
       <workItem from="1588248626173" duration="5602000" />
       <workItem from="1588341412141" duration="618000" />
       <workItem from="1588677023556" duration="599000" />
-      <workItem from="1588763535701" duration="7097000" />
+      <workItem from="1588763535701" duration="7906000" />
+      <workItem from="1588846659993" duration="4868000" />
+      <workItem from="1588931957225" duration="13462000" />
     </task>
     <servers />
   </component>
