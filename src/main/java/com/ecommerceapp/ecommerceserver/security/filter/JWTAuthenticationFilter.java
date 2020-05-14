@@ -1,16 +1,12 @@
 package com.ecommerceapp.ecommerceserver.security.filter;
 
 import com.auth0.jwt.JWT;
-import com.ecommerceapp.ecommerceserver.controller.service.UserService;
 import com.ecommerceapp.ecommerceserver.model.dto.UserDto;
-import com.ecommerceapp.ecommerceserver.model.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.hibernate.secure.spi.GrantedPermission;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 

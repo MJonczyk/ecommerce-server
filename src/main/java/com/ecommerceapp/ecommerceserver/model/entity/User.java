@@ -18,10 +18,11 @@ public class User {
         this.password = password;
         this.email = email;
         this.role = role;
+        this.isEnabled = true;
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long id;
 
@@ -33,4 +34,6 @@ public class User {
     private String email;
 
     private String role;
+
+    private boolean isEnabled;
 }
