@@ -1,5 +1,6 @@
 package com.ecommerceapp.ecommerceserver.controller.service;
 
+import com.ecommerceapp.ecommerceserver.controller.RegistrationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -19,9 +20,9 @@ public class EmailSenderService {
     public void sendConfirmationMail(String email, String token) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
-        message.setSubject("Account confirmation.");
-        message.setText("To confirm registration click in the link below.\n"
-                + "http://localhost:8080/confirm?token=" + token);
+        message.setSubject(RegistrationConstants.SUBJECT);
+        message.setText(RegistrationConstants.MESSAGE_TEXT
+                + RegistrationConstants.CONFIRMATION_ENDPOINT + token);
         try {
             javaMailSender.send(message);
         }

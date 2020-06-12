@@ -58,7 +58,7 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity add(@RequestBody UserDto userDto) {
         User user = new User(userDto.getUsername(), bCryptPasswordEncoder.encode(userDto.getPassword()),
-                userDto.getEmail(), userDto.getRole());
+                userDto.getEmail());
         EntityModel<User> userEntityModel = userModelAssembler.toModel(userService.save(user));
 
         ConfirmationToken token = confirmationTokenService.save(user);
