@@ -5,9 +5,9 @@ import com.ecommerceapp.ecommerceserver.controller.service.OrderService;
 import com.ecommerceapp.ecommerceserver.model.entity.Order;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,5 +38,31 @@ public class OrderController {
     @GetMapping("/orders/{id}")
     public EntityModel<Order> getOne(@PathVariable Long id) {
         return orderModelAssembler.toModel(orderService.getOne(id));
+    }
+
+    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/orders")
+    public ResponseEntity add(@RequestBody Order order) {
+        EntityModel<Order> orderEntityModel = orderModelAssembler.toModel(orderService.save(order));
+
+        return ResponseEntity.created(orderEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(orderEntityModel);
+    }
+
+    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PutMapping("/orders/{id}")
+    public ResponseEntity<?> edit(@RequestBody Order order, @PathVariable Long id) {
+        EntityModel<Order> orderEntityModel = orderModelAssembler.toModel(orderService.edit(order, id));
+
+        return ResponseEntity.created(orderEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(orderEntityModel);
+    }
+
+    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/orders/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        orderService.delete(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

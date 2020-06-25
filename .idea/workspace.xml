@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd4d096-262f-4cdf-b249-dcd5115d845f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/OrderItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/FeatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/FeatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Feature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Feature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/config/WebSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/OrderController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,6 +122,8 @@
       <workItem from="1592476228269" duration="10086000" />
       <workItem from="1593015380698" duration="190000" />
       <workItem from="1593082656774" duration="11000" />
+      <workItem from="1593082757425" duration="308000" />
+      <workItem from="1593094827191" duration="366000" />
     </task>
     <servers />
   </component>
