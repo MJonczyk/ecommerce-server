@@ -2,13 +2,13 @@ package com.ecommerceapp.ecommerceserver.controller;
 
 import com.ecommerceapp.ecommerceserver.controller.assembler.ProductModelAssembler;
 import com.ecommerceapp.ecommerceserver.controller.service.ProductService;
-import com.ecommerceapp.ecommerceserver.model.entity.Order;
 import com.ecommerceapp.ecommerceserver.model.entity.Product;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,5 +39,31 @@ public class ProductController {
     @GetMapping("/products/{id}")
     public EntityModel<Product> getOne(@PathVariable Long id) {
         return productModelAssembler.toModel(productService.getOne(id));
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/products")
+    public ResponseEntity add(@RequestBody Product product) {
+        EntityModel<Product> productEntityModel = productModelAssembler.toModel(productService.save(product));
+
+        return ResponseEntity.created(productEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(productEntityModel);
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PutMapping("/products/{id}")
+    public ResponseEntity<?> edit(@RequestBody Product product, @PathVariable Long id) {
+        EntityModel<Product> productEntityModel = productModelAssembler.toModel(productService.edit(product, id));
+
+        return ResponseEntity.created(productEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(productEntityModel);
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/products/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        productService.delete(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

@@ -1,5 +1,6 @@
 package com.ecommerceapp.ecommerceserver.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,8 +19,15 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "features_by_categories")
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "features_by_categories",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "feature_id")
+    )
+    @JsonIgnoreProperties("categories")
     private List<Feature> features;
 }

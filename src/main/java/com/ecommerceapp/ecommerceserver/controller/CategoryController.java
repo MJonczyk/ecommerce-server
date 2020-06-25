@@ -41,15 +41,16 @@ public class CategoryController {
         return categoryModelAssembler.toModel(categoryService.getOne(id));
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping("/category")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/categories")
     public ResponseEntity add(@RequestBody Category category) {
         EntityModel<Category> categoryEntityModel = categoryModelAssembler.toModel(categoryService.save(category));
+
         return ResponseEntity.created(categoryEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
                 .body(categoryEntityModel);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/categories/{id}")
     public ResponseEntity<?> edit(@RequestBody Category category, @PathVariable Long id) {
         EntityModel<Category> categoryEntityModel = categoryModelAssembler.toModel(categoryService.edit(category, id));
@@ -58,9 +59,9 @@ public class CategoryController {
                 .body(categoryEntityModel);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/categories/{id}")
-    public ResponseEntity delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         categoryService.delete(id);
 
         return ResponseEntity.noContent().build();

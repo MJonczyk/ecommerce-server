@@ -5,9 +5,10 @@ import com.ecommerceapp.ecommerceserver.controller.service.FeatureService;
 import com.ecommerceapp.ecommerceserver.model.entity.Feature;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,5 +39,31 @@ public class FeatureController {
     @GetMapping("/features/{id}")
     public EntityModel<Feature> getOne(@PathVariable Long id) {
         return featureModelAssembler.toModel(featureService.getOne(id));
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/features")
+    public ResponseEntity add(@RequestBody Feature feature) {
+        EntityModel<Feature> featureEntityModel = featureModelAssembler.toModel(featureService.save(feature));
+
+        return ResponseEntity.created(featureEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(featureEntityModel);
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PutMapping("/features/{id}")
+    public ResponseEntity<?> edit(@RequestBody Feature feature, @PathVariable Long id) {
+        EntityModel<Feature> featureEntityModel = featureModelAssembler.toModel(featureService.edit(feature, id));
+
+        return ResponseEntity.created(featureEntityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .body(featureEntityModel);
+    }
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/features/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        featureService.delete(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

@@ -1,5 +1,6 @@
 package com.ecommerceapp.ecommerceserver.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +28,7 @@ public class Order {
 
     private String status;
 
-    @OneToMany(mappedBy = "product_id")
-    private List<Product> products;
+    @OneToMany(mappedBy = "order")
+//    @JsonIgnoreProperties("order")
+    private List<OrderItem> items;
 }
