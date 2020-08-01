@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd4d096-262f-4cdf-b249-dcd5115d845f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/specification/ProductSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/specification/ProductSpecificationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/specification/SearchCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/specification/SpecificationConjunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/assembler/ProductModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/assembler/ProductModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/controller/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/ProductDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/entity/ProductDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/model/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommerceapp/ecommerceserver/security/config/WebSecurity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +26,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -123,7 +134,18 @@
       <workItem from="1593015380698" duration="190000" />
       <workItem from="1593082656774" duration="11000" />
       <workItem from="1593082757425" duration="308000" />
-      <workItem from="1593094827191" duration="366000" />
+      <workItem from="1593094827191" duration="458000" />
+      <workItem from="1593709510278" duration="2311000" />
+      <workItem from="1594113317678" duration="4059000" />
+      <workItem from="1594197555821" duration="12473000" />
+      <workItem from="1595248880697" duration="1287000" />
+      <workItem from="1595327675479" duration="3102000" />
+      <workItem from="1595415476415" duration="609000" />
+      <workItem from="1595503962478" duration="5648000" />
+      <workItem from="1595939614454" duration="3068000" />
+      <workItem from="1596034823181" duration="6919000" />
+      <workItem from="1596112357844" duration="10294000" />
+      <workItem from="1596196876137" duration="7909000" />
     </task>
     <servers />
   </component>

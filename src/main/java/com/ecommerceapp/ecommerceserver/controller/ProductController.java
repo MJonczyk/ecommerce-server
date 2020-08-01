@@ -3,9 +3,11 @@ package com.ecommerceapp.ecommerceserver.controller;
 import com.ecommerceapp.ecommerceserver.controller.assembler.ProductModelAssembler;
 import com.ecommerceapp.ecommerceserver.controller.service.ProductService;
 import com.ecommerceapp.ecommerceserver.model.entity.Product;
+import org.springframework.data.domain.Page;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -27,13 +29,22 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public CollectionModel<EntityModel<Product>> getAll() {
-        List<EntityModel<Product>> products = productService.getAll()
-                .stream()
+    public PagedModel<EntityModel<Product>> getAll(@RequestParam(defaultValue = "") String search,
+                                                         @RequestParam(defaultValue = "id") String sortColumn,
+                                                         @RequestParam(defaultValue = "asc") String sortOrder,
+                                                         @RequestParam(defaultValue = "0") int page,
+                                                         @RequestParam(defaultValue = "0") int pageSize) {
+        Page<Product> products = productService
+                .getAllWithSearchingPagingAndSorting(search, sortColumn, sortOrder, page, pageSize);
+
+        PagedModel.PageMetadata metadata = new PagedModel.PageMetadata(pageSize, page, products.getTotalElements(),
+                products.getTotalPages());
+
+        List<EntityModel<Product>> productList = products.stream()
                 .map(productModelAssembler::toModel)
                 .collect(Collectors.toList());
 
-        return new CollectionModel<>(products, linkTo(methodOn(ProductController.class).getAll()).withSelfRel());
+        return productModelAssembler.toPagedModel(productList, metadata, search, sortColumn, sortOrder, page, pageSize);
     }
 
     @GetMapping("/products/{id}")
